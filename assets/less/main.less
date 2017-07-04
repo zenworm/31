@@ -1,0 +1,252 @@
+@import 'grid.less';
+@import 'normalize.less';
+@import 'vars.less';
+@import 'font-face.less';
+// Media queries at bottom
+
+// =================================
+//
+//   General
+//
+// =================================
+
+html { overflow-x:hidden; background:black; }
+body { overflow-x:hidden; width:100%; position:relative; margin:0; padding:0; background:url(../images/bg-blood-1.png) -777px -456px no-repeat;  color:white; line-height:1.3; .font-body(); }
+
+.holyshit { position:fixed; top:0; right:0; bottom:0; left:0; display:none; 
+	&.resizing { display:block; background:url(../images/bg-skull1.gif); }
+}
+
+@media only screen and (max-width : 1080px) {
+	body { background-position:-900px -610px; }
+}
+
+@media only screen and (min-width : 1081px) {
+	body { background-position:-700px -580px; }
+}
+
+@media only screen and (min-width : 1440px) {
+	body { background-position:-450px -420px; }
+}
+
+@media only screen and (min-width : 1800px) {
+	body { background-position:-180px -388px; }
+}
+
+::-moz-selection { background:@color-primary; color:white; }
+::selection { background:@color-primary; color:white; }
+
+
+// =================================
+//
+//   Colors
+//
+// =================================
+
+@color-primary:#df150b;
+@color-secondary:gray;
+@color-link:#df150b;
+
+
+// =================================
+//
+//   Typography
+//
+// =================================
+
+// 12 / 16 =     0.75em
+// 14 / 16 =     0.875em
+// 16 / 16 =     1em
+// 18 / 16 =     1.125em
+// 21 / 16 =     1.3125em
+// 24 / 16 =     1.5em
+// 32 / 16 =     2em
+// 48 / 16 =     3em
+// 72 / 16 =     4.5em
+
+.font-headline() { font-family:"Courier New",Courier,sans-serif; }
+.font-body() { font-family:"Bookman Old Style",Bookman,"Goudy Old Style","Hoefler Text","Minion Pro","Adobe Garamond",Garamond,serif; }
+
+h1, h2, h3, h4, h5, h6 { line-height:1.3; .font-headline(); font-weight:normal; }
+h1 { font-size:1.5em; line-height:1.2; }
+p { .font-body(); }
+a { color:@color-link; }
+
+// =================================
+//
+//   Site Header
+//
+// =================================
+
+[role="banner"] { position:relative; max-width:1200px; padding:4em 0 0; margin:0 28em; 
+	
+	h1, p { position:relative; margin:0; line-height:1; text-align:right; }
+
+	p { .font-headline(); font-size:0.875em; margin-bottom:6em; z-index:1; }
+	
+	h1 { font-family:"31"; font-size:26em; font-weight:normal;
+		@media only screen and (max-width : 1440px) { font-size:24em; }
+		@media only screen and (min-width : 1800px) { font-size:32em; }
+	}
+
+	a { padding:2em 0 2em 2em; color:white; text-decoration:none; 
+		&:hover { color:@color-primary; }
+	}
+	
+}
+
+@media only screen and (min-width : 1700px) {
+		[role="banner"] { max-width:1000px; padding:4em 0 0; margin:0 32em; 
+			p { margin-bottom:2em; }
+		}
+	}
+
+@media only screen and (max-width : 1530px) {
+	[role="banner"] { max-width:1200px; padding:4em 0 0; margin:0 20em; 
+		p { margin-bottom:2em; }
+	}
+}
+
+@media only screen and (max-width : 1180px) {
+	[role="banner"] { max-width:1200px; padding:4em 0 0; margin:0 12em; 
+		p { margin-bottom:2em; }
+	}
+}
+
+@media only screen and (max-width : 1000px) {
+	[role="banner"] { max-width:1200px; padding:4em 0 0; margin:0 6em; 
+		p { margin-bottom:2em; }
+	}
+}
+
+@media only screen and (max-width : 800px) {
+	[role="banner"] { max-width:100%; padding:4em 0 0; margin:0 0 2em;
+		h1, p { text-align:center; }
+		p { margin-bottom:2em; }
+		h1 { font-size:12em; }
+		a { padding:2em; }
+	}
+}
+
+// =================================
+//
+//   Main Layout
+//
+// =================================
+
+[role="main"] { .clearfix(); }
+
+article { position:relative; margin:0 18em; max-width:1200px; margin:0 28em;
+
+	h1 { color:@color-primary; text-transform:uppercase; }
+
+	img { max-width:80%; float:left; margin-top:-4em; margin:-4em 2em 2em -28em; }
+
+	.content { max-width:30%; padding:0 4em; float:right; .box-sizing(border-box); float:none; display:inline; }
+	.content p, .content li { font-size:1.3em; color:white; color:rgba(255,255,255,.95); }
+
+}
+
+	@media only screen and (min-width : 1700px) {
+		article { max-width:1000px; margin:0 32em;
+			img { margin-top:-6em; margin-left:-32em; max-width:90%; }
+			.content p, .content li { font-size:1.4em; }
+		}
+	}
+
+	@media only screen and (max-width : 1530px) {
+		article { max-width:1200px; margin:0 20em;
+			img { margin-top:-4em; margin-left:-20em; max-width:75%; }
+			.content p, .content li { font-size:1.4em; }
+		}
+	}
+
+	@media only screen and (max-width : 1180px) {
+		article { margin:0 12em;
+			img { margin:-8em 2em 2em -12em; max-width:70%; }
+			.content { float:none; display:inline; }
+			.content p, .content li { font-size:1.3em; }
+		}
+	}
+
+	@media only screen and (max-width : 1000px) {
+		article { margin:0 6em;
+			img { margin:-8em 1em 1em -6em; max-width:60%; }
+			.content { float:none; display:inline; }
+			.content p, .content li { font-size:1.3em; }
+		}
+	}
+
+	@media only screen and (max-width : 800px) {
+		article { margin:0 4em;
+			img { display:block; margin:0 auto 2em; float:none; max-width:100%; }
+			h1 { text-align:center; }
+			.content { float:none; display:inline; }
+			.content p, .content li { font-size:1.3em; }
+		}
+	}
+
+	@media only screen and (max-width : 480px) {
+		body { background-size:200%; background-position:-320px -162px; }
+		article { margin:0 1em; max-width:100%; 
+			.content p, .content li { font-size:1.2em; }
+		}
+	}
+
+	@media only screen and (max-width : 480px) and (orientation:landscape) {
+		article {
+			.content p, .content li { font-size:1em; }
+		}
+	}
+
+#archives { text-align:center;
+	h1 { margin-bottom:1em; color:@color-primary; font-size:5em; font-family:"Wingdings"; -webkit-font-smoothing:antialiased; font-size:1em;
+		span:first-child { display:none; }
+		span + span:before { display:block; content: "\263a"; font-family:"skull"; font-size:5em; color:@color-primary; }
+	}
+	nav { margin-bottom:4em; 
+		a { display:block; margin:0; padding:0.25em 1em; .font-headline();
+			body.home &:first-child { color:#666; text-decoration:none; }
+			&.active { color:#666; text-decoration:none; }
+		}
+	}
+
+	@media only screen and (min-width : 1700px) {
+	max-width:1000px; padding:4em 0 0; margin:0 32em;
+	}
+}
+
+// =================================
+//
+//   Site Footer
+//
+// =================================
+
+[role="contentinfo"] { margin:8em 0 4em 4em; color:#333;
+	p { width:320px; font-size:1em; }
+	a { color:#666; }
+}
+
+@media only screen and (max-width : 500px) {
+	[role="contentinfo"] { margin:8em 2em 4em;
+		p { width:auto; text-align:center; }
+	}
+}
+
+// =================================
+//
+//   Error
+//
+// =================================
+body.WTF {
+	article { text-align:center; }
+	article h1 { margin-bottom:0; font-family:"31"; color:white; font-size:20em; text-align:center; }
+	.content p { margin-top:-1em; }
+}
+
+// =================================
+//
+//   Media Queries
+//
+// =================================
+@import 'media-queries.less';

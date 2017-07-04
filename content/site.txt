@@ -1,0 +1,9 @@
+Title: 31
+----
+Author: Jason O'Brien
+----
+Description: 31 days. 31 movies.
+----
+Keywords: halloween, movies, film
+----
+Copyright: © 20012-(date: Year)
